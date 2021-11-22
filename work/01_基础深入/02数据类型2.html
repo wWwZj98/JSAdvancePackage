@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    1、undefined与null的区别
+        undefined 代表定义未赋值
+        null 定义了并赋值为null
+
+    2、什么时候为变量赋值为null
+        初始赋值，表明将要赋值为对象
+        结束前，让对象成为垃圾对象被回收
+    3、区分变量类型与数据类型
+        数据类型
+            基本类型
+            对象类型
+        变量的类型（变量内存值的类型）
+            基本类型 保存的是基本类型的数据
+            引用类型 保存的是地址值
+
+-->
+<script>
+    function Person(name,age){  //构造函数
+        this.name = name;
+        this.age = age;
+    }
+
+    let p = new Person('孙悟空',17);  //实例
+    console.log(p);
+
+
+    // 1、undefined与null的区别
+    let obj = null;   //初始赋值为null，表明将来会赋值为对象
+    //确定对象就赋值
+    obj = [1,2,3,'happy'];
+
+    //最后  释放内存
+    obj = null;   //让obj指向的对象成为垃圾对象,从而被回收
+
+    let c =function (){
+
+    };
+    console.log(typeof c);
+</script>
+</body>
+</html>

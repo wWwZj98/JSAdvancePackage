@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+1、什么是对象？
+    多个数据的封装体
+    用来保存多个数据的容器，可以存储不同数据类型的数据
+
+2、为什么要用对象？
+    统一管理多个数据
+3、对象的组成
+    属性：
+        代表现实事物的状态数据
+        由属性名（字符串）和属性值（任意类型）组成
+    方法：
+        代表现实事物的行为数据
+        一种特别的属性，属性值是函数
+4、如何访问对象内部数据？
+    .属性名 ：编码简单,有时不能用
+    ['属性名'] ：编码麻烦，但通用
+
+
+    什么时候必须用['属性名']的方式？
+        1、属性名包含特殊字符：- 空格
+        2、属性名不确定
+
+-->
+
+<script type="text/javascript">
+    let p = {
+        name:'Tom',
+        age:15,
+        setname:function (name){
+            this.name = name
+        }
+    }
+    p.setname('Bob');
+    p['setname']('Jack');
+    console.log(p['name']);
+    console.log(p.name);
+
+
+    let p1 = {};
+    //给p1添加一个属性：content-type:text/json
+    // p1.content-type = 'text/json'    不能用
+    p1['content-type'] = 'text/json';
+
+    //属性名不确定
+    let propName = 'myAge';
+    let value = 18
+    // p1.propName = value;   不能用
+    p1[propName] = value;
+
+    console.log(p1);
+
+
+</script>
+</body>
+</html>

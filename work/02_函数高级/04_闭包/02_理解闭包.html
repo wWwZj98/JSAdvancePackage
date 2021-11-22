@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+1、闭包是如何产生的？
+    当一个嵌套的内部（子）函数引用了嵌套的外部（父）函数的变量时，就产生了闭包
+2、闭包到底是什么？
+    理解一：闭包就是嵌套的内部函数
+    理解二：包含被引用变量(函数)的对象 (少数人)
+    注意：闭包存在于嵌套的内部函数中
+
+3、产生闭包的条件
+    函数嵌套
+    内部函数引用了外部函数的数据
+
+4、外部函数调用了几次，闭包就产生了几个
+-->
+<script type="text/javascript">
+    function fn1 () {
+        let a = 2
+        function fn2 () {
+            console.log(a)
+        }
+        fn2()
+    }
+    fn1()
+</script>
+</body>
+</html>

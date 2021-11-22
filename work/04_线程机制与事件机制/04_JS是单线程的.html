@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+代码分类
+    初始化代码
+    回调代码
+为什么JS要用单线程模式，而不用多线程模式？
+    Javascript的单线程，与它的用途有关
+    作为浏览器脚本语言，Javascript的主要用途是与用户互动，以及操作DOM
+    这决定了它只能是单线程，否则会带来较复杂的同步问题
+-->
+
+<script>
+    setTimeout(function () {
+        console.log('timeout 2222')
+        alert('222222')
+    },5000)
+    setTimeout(function () {
+        console.log('timeout 1111')
+        alert('111111')
+    },1000)
+    setTimeout(function () {
+        console.log('timeout 0000')
+    },0)
+    
+    function fn() {
+        console.log('fn()')
+    }
+    fn()
+    
+    console.log('alert之前')
+    alert('-------')
+    console.log('alert之后')
+        
+    
+</script>
+</body>
+</html>

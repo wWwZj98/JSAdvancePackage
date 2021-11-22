@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+  在JS调用函数时传递变量参数时，是值传递还是引用传递
+    理解1：都是值传递，只不过这个值是可以是基本数据或地址值
+    理解2：可能是值传递，也可能是引用传递（地址值）
+
+
+
+
+  JS引擎如何管理内存？
+    1、内存生命周期
+        分配内存空间，得到使用权
+        存储数据，可以反复操作数据
+        释放空间
+
+    2、释放内存
+        局部变量：函数执行完自动释放
+        对象：成为垃圾对象--》由垃圾回收器回收
+-->
+
+<script type="text/javascript">
+    let a = 3;
+    function fun(x){
+        x = x + 1;
+    }
+    console.log(a);
+
+    function fun2(obj){
+        console.log(obj.name);
+    }
+    let obj = {name:'swk'};
+    fun2(obj);
+</script>
+</body>
+</html>

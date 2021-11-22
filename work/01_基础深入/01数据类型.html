@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<!--
+    基本类型
+        string 任意字符串
+        number 任意的数字
+        boolean true/false
+        undefined undefined
+        null null
+    对象类型
+        Object 任意对象
+        Function 一种特别的对象 （可以执行）
+        Array 一种特别的对象 （内部有序）
+    判断数据类型
+        typeof（返回的是对应类型的字符串形式）:
+            可以判断undefined、数值、布尔值、字符串、function
+            不能判断null与object object与array
+        instanceof:
+            判断对象的具体类型
+        ===:
+            可以判断:undefined null
+-->
+
+<script type="text/javascript">
+    let a;
+    console.log(a,typeof a,typeof a===undefined,typeof a==="undefined");
+    console.log(undefined==="undefined");
+
+    a = 4;
+    console.log(a,typeof a==='number');
+    console.log(typeof a);
+
+    a = true;
+    console.log(typeof a === "boolean");
+    a = null;
+    console.log(typeof null);
+    console.log( a === null);
+
+    //对象
+    let b1 = {
+        b2:[1,'abc',console.log],
+        b3:function (){
+            console.log('b4');
+            return function (){
+                return 'wzj';
+            }
+        }
+    }
+    console.log(b1 instanceof Object); //true
+    console.log(b1.b2 instanceof Array)
+
+    console.log(typeof b1.b2,'--------');
+
+    console.log(typeof b1.b3 ==='function');
+
+
+    console.log(typeof b1.b2[2]==='function');
+    b1.b2[2]("hahha");
+
+    console.log(b1.b3()());
+
+</script>
+</body>
+</html>
